@@ -12,11 +12,11 @@ def load_library(file)
   emot_hashes
 end
 
-def get_japanese_emoticon(file, emoticon)
-  source = YAML.load_file(file)
-  jap = source["get_emoticon"][emoticon]
-  jap
-end
+def get_japanese_emoticon(emoticon_file, emoticon)
+  emoticon_lib = load_library(emoticon_file)
+  japanese_emoticon = emoticon_lib['get_emoticon'][emoticon]
+  japanese_emoticon ? japanese_emoticon : 'Sorry, that emoticon was not found'
+end	end
 
 def get_english_meaning(file, emoticon)
   source = YAML.load_file(file)
