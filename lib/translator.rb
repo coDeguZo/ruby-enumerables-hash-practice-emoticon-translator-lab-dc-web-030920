@@ -22,6 +22,10 @@ def get_japanese_emoticon(file, emoticon)
 end
 
 def get_english_meaning(file, emoticon)
-  source = YAML.load_file(file)
-  load_library(file)
+  source = load_library(file)
+  if source["get_meaning"][emoticon] == nil
+    "Sorry, that emoticon was not found"
+  else
+    source["get_meaning"][emoticon]
+  end
 end
