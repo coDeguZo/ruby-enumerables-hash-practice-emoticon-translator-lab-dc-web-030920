@@ -15,6 +15,7 @@ end
 def get_japanese_emoticon(file, emoticon)
   source = YAML.load_file(file)
   jap = source["get_emoticon"][emoticon]
+  jap
 end
 
 def get_english_meaning(file, emoticon)
