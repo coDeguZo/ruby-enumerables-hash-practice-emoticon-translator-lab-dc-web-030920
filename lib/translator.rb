@@ -15,7 +15,7 @@ end
 def get_japanese_emoticon(file, emoticon)
   source = load_library(file)
   jap = source["get_emoticon"][emoticon]
-  return ""
+  return "Sorry, that emoticon was not found" if jap == nil
 end
 
 def get_english_meaning(file, emoticon)
